@@ -1,0 +1,49 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 1000px;
+  height : 400px;
+  margin: 10px;
+}
+
+.container > * {
+  width: 100%;
+}
+
+.form {
+  display: flex;
+  padding-top: 6px;
+   flex-direction: column;
+   width: 200px;
+  height : 80px;
+  margin: 10px;
+}
+
+.mat-form-field {
+  font-size: 16px;
+  flex-grow: 1;
+}
+.form-fields {
+    display: flex;
+    flex-direction: column;
+} 
+
+.mat-grid-tile {
+  width: calc(15% - 40px)!important;
+  height: calc(100% - 70px);
+  padding: -10px !important;
+}
+.col-grid-tile1 {
+   top: -150px !important;
+    margin: 50px;
+}
+.col-grid-tile2 {
+  margin: -100px !important;
+}
+.col-grid-tile3 {
+  margin: -100px !important;
+   left: 900px !important;
+}
+mat-grid-list{
+  height: calc(250px)!important;
+}

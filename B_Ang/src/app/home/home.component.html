@@ -1,0 +1,338 @@
+<div>
+  <div>
+    <!--<button (click) = ParseXmlToJson()> ParseXmlToJson</button>-->
+    <!--<input type = "text" id = "Search" name = "Search" placeholder="Enter screen number to open" #searchInput>
+        <button (click)='OpenScreen(searchInput.value, $event)' (onChanges)='OpenScreen(searchInput.value, $event)'>Toggle it</button>-->
+    <!--<button (click)='xpandStatus=(xpandStatus)?false:true'>Toggle it</button>-->
+    <mat-form-field>
+      <select matNativeControl placeholder="Select Panal" [(ngModel)]="selectedScreen" name="screen">
+      <option value="" disabled selected></option>
+      <option value="panal1">REQUIREMENTS STATUS</option>
+      <option value="panal2">FINAL ACTION</option>
+      <option value="panal3">DATES</option>
+      <option value="panal4">BENEFITS</option>
+      <option value="panal5">OWNER/PAYER</option>
+      <option value="panal6">PREMIUM BREAKDOWN</option>
+      <option value="panal7">Panal-7</option>
+      <option value="panal8">Panal-8</option>
+      <option value="panal9">Panal-9</option>
+      <option value="panal10">Panal-10</option>
+      <option value="panal11">Panal-11</option>
+    </select>
+    </mat-form-field>
+    <button (click)='OpenScreenDrop(selectedScreen, $event)'>Select</button>
+  </div>
+
+  <mat-accordion multi="true">
+    <mat-expansion-panel id="panel-1" [(expanded)]="xpandScreen1Status" #panel1 (mouseover)="panel1.open()" (mouseleave)="panel1.close()">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          REQUIREMENTS STATUS
+        </mat-panel-title>
+        <mat-panel-description>
+          Details Of the Policy Requirements
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <mat-form-field>
+        <input matInput placeholder="Policy Number">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Insured Name">
+      </mat-form-field>
+      <p> </p>
+      <mat-form-field>
+        <input matInput placeholder="UnderWriter">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="UnderWriting Amount">
+      </mat-form-field>
+      <p> </p>
+      <mat-form-field>
+        <input matInput placeholder="Region">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Insured Age">
+      </mat-form-field>
+      <p> </p>
+      <mat-form-field>
+        <input matInput placeholder="Status">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Requirements Status">
+      </mat-form-field>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel id="panel-2" [(expanded)]="xpandScreen2Status" #panel2 (mouseover)="panel2.open()" (mouseleave)="panel2.close()"
+      (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          FINAL ACTION
+        </mat-panel-title>
+        <mat-panel-description>
+          Details of Final Action
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <mat-form-field>
+        <input matInput placeholder="Policy Number">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Insured Name">
+      </mat-form-field>
+      <p> </p>
+      <mat-form-field>
+        <input matInput placeholder="UnderWriter">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="UnderWriting Amount">
+      </mat-form-field>
+      <p> </p>
+      <mat-form-field>
+        <input matInput placeholder="Region">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Insured Age">
+      </mat-form-field>
+      <p> </p>
+      <mat-form-field>
+        <input matInput placeholder="Status">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Requirements Status">
+      </mat-form-field>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel id="panel-3" [(expanded)]="xpandScreen3Status" #panel3 (mouseover)="panel3.open()" (mouseleave)="panel3.close()">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            DATES
+          </mat-panel-title>
+          <mat-panel-description>
+            Details Of Policy dates
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-form-field>
+          <input matInput placeholder="First name">
+        </mat-form-field>
+        <p></p>
+        <mat-form-field>
+          <input matInput placeholder="Age">
+        </mat-form-field>
+        <p></p>
+        <mat-form-field>
+          <input matInput placeholder="First name">
+        </mat-form-field>
+        <p></p>
+        <mat-form-field>
+          <input matInput placeholder="Age">
+        </mat-form-field>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel id="panel-4" [(expanded)]="xpandScreen4Status" #panel4 (mouseover)="panel4.open()" (mouseleave)="panel4.close()">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            BENEFITS
+          </mat-panel-title>
+          <mat-panel-description>
+            Details Of Benefits
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-form-field>
+          <input matInput placeholder="First name">
+        </mat-form-field>
+        <p></p>
+        <mat-form-field>
+          <input matInput placeholder="Age">
+        </mat-form-field>
+        <p></p>
+        <mat-form-field>
+          <input matInput placeholder="First name">
+        </mat-form-field>
+        <p></p>
+        <mat-form-field>
+          <input matInput placeholder="Age">
+        </mat-form-field>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel id="panel-5" [(expanded)]="xpandScreen5Status" #panel5 (mouseover)="panel5.open()" (mouseleave)="panel5.close()">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            OWNER/PAYER
+          </mat-panel-title>
+          <mat-panel-description>
+            Details of Owner/Payer
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-form-field>
+          <input matInput placeholder="First name">
+        </mat-form-field>
+        <p></p>
+        <mat-form-field>
+          <input matInput placeholder="Age">
+        </mat-form-field>
+        <p></p>
+        <mat-form-field>
+          <input matInput placeholder="First name">
+        </mat-form-field>
+        <p></p>
+        <mat-form-field>
+          <input matInput placeholder="Age">
+        </mat-form-field>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel id="panel-6" [(expanded)]="xpandScreen6Status" #panel6 (mouseover)="panel6.open()" (mouseleave)="panel6.close()">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            PREMIUM BREAKDOWN
+          </mat-panel-title>
+          <mat-panel-description>
+            Details of Premium Breakdown
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-form-field>
+          <input matInput placeholder="First name">
+        </mat-form-field>
+        <p></p>
+        <mat-form-field>
+          <input matInput placeholder="Age">
+        </mat-form-field>
+        <p></p>
+        <mat-form-field>
+          <input matInput placeholder="First name">
+        </mat-form-field>
+        <p></p>
+        <mat-form-field>
+          <input matInput placeholder="Age">
+        </mat-form-field>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel id="panel-7" [(expanded)]="xpandScreen7Status" #panel7 (mouseover)="panel7.open()" (mouseleave)="panel7.close()">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Screen-7
+          </mat-panel-title>
+          <mat-panel-description>
+            Data needs to be fill.
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-form-field>
+          <input matInput placeholder="First name">
+        </mat-form-field>
+        <p></p>
+        <mat-form-field>
+          <input matInput placeholder="Age">
+        </mat-form-field>
+        <p></p>
+        <mat-form-field>
+          <input matInput placeholder="First name">
+        </mat-form-field>
+        <p></p>
+        <mat-form-field>
+          <input matInput placeholder="Age">
+        </mat-form-field>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel id="panel-8" [(expanded)]="xpandScreen8Status" #panel8 (mouseover)="panel8.open()" (mouseleave)="panel8.close()">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Screen-8
+          </mat-panel-title>
+          <mat-panel-description>
+            Data needs to be fill.
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-form-field>
+          <input matInput placeholder="First name">
+        </mat-form-field>
+        <p></p>
+        <mat-form-field>
+          <input matInput placeholder="Age">
+        </mat-form-field>
+        <p></p>
+        <mat-form-field>
+          <input matInput placeholder="First name">
+        </mat-form-field>
+        <p></p>
+        <mat-form-field>
+          <input matInput placeholder="Age">
+        </mat-form-field>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel id="panel-9" [(expanded)]="xpandScreen9Status" #panel9 (mouseover)="panel9.open()" (mouseleave)="panel9.close()">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Screen-9
+          </mat-panel-title>
+          <mat-panel-description>
+            Data needs to be fill.
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-form-field>
+          <input matInput placeholder="First name">
+        </mat-form-field>
+        <p></p>
+        <mat-form-field>
+          <input matInput placeholder="Age">
+        </mat-form-field>
+        <p></p>
+        <mat-form-field>
+          <input matInput placeholder="First name">
+        </mat-form-field>
+        <p></p>
+        <mat-form-field>
+          <input matInput placeholder="Age">
+        </mat-form-field>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel id="panel-10" [(expanded)]="xpandScreen10Status" #panel10 (mouseover)="panel10.open()" (mouseleave)="panel10.close()">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Screen-10
+          </mat-panel-title>
+          <mat-panel-description>
+            Data needs to be fill.
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-form-field>
+          <input matInput placeholder="First name">
+        </mat-form-field>
+        <p></p>
+        <mat-form-field>
+          <input matInput placeholder="Age">
+        </mat-form-field>
+        <p></p>
+        <mat-form-field>
+          <input matInput placeholder="First name">
+        </mat-form-field>
+        <p></p>
+        <mat-form-field>
+          <input matInput placeholder="Age">
+        </mat-form-field>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel id="panel-11" [(expanded)]="xpandScreen11Status" #panel11 (mouseover)="panel11.open()" (mouseleave)="panel11.close()">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Screen-11
+          </mat-panel-title>
+          <mat-panel-description>
+            Data needs to be fill.
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-form-field>
+          <input matInput placeholder="First name">
+        </mat-form-field>
+        <p></p>
+        <mat-form-field>
+          <input matInput placeholder="Age">
+        </mat-form-field>
+        <p></p>
+        <mat-form-field>
+          <input matInput placeholder="First name">
+        </mat-form-field>
+        <p></p>
+        <mat-form-field>
+          <input matInput placeholder="Age">
+        </mat-form-field>
+      </mat-expansion-panel>
+  </mat-accordion>
+</div>

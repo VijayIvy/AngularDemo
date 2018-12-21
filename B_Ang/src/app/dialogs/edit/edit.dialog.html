@@ -1,0 +1,274 @@
+<div class="container">
+  <h3 mat-dialog-title>Issue Id: {{data.id}}</h3>
+  <div>
+
+    <!-- First Page STARTED style="width: 400px; height: 300px;"-->
+    <div *ngIf="showWidgtOne">
+      <form class="mat-dialog-content" (ngSubmit)="submit" #formControl="ngForm">
+        <ngx-widget-grid class="custom-dialog-container" >
+          
+            <div>
+              <mat-grid-list cols="3" gutterSize="3px" rowHeight="300">
+                <mat-grid-tile class="col-grid-tile1">
+                  <div class="form">
+                    
+                    <mat-form-field color="accent">
+                      <input matInput #input class="form-control" placeholder="Rule Id" [(ngModel)]="data.id" name="id" required>
+                      <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+                    </mat-form-field>
+                    
+                     <!--<mat-form-field color="accent">
+                      <textarea matInput #input class="form-control" placeholder="Scanning Path" [(ngModel)]="data.scanningpath" name="scanningpath"
+                        ></textarea>                        
+                    </mat-form-field>-->
+                    <mat-form-field color="accent">
+              <mat-select name="scanningpath" class="  " placeholder="ScanningpathList" [(ngModel)]="data.scanningpath">
+                <!--<mat-option></mat-option>-->
+                <mat-option value="1">1</mat-option>
+                <mat-option value="2">2</mat-option>
+                <mat-option value="101">101</mat-option>
+                <mat-option value="102">102</mat-option>
+              </mat-select>
+            </mat-form-field>
+                    
+                    <mat-form-field color="accent">
+                      <input matInput #input class="form-control" placeholder="ShouldDocBeAutomaticallyReceieved" [(ngModel)]="data.docautorecive"
+                        name="docautorecive">                       
+                    </mat-form-field>
+                  </div>
+                </mat-grid-tile>
+
+                <mat-grid-tile class="col-grid-tile2">
+                  <div class="form">
+                    <mat-form-field color="accent">
+                      <input matInput #input class="form-control" placeholder="Doc Id" [(ngModel)]="data.docid" name="docid" required>
+                      <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+                    </mat-form-field>
+                                       
+                    <mat-form-field color="accent">
+                      <input matInput #input class="form-control" placeholder="IsItRealPolicyNumber" [(ngModel)]="data.realpolicynum" name="realpolicynum"
+                        >                        
+                    </mat-form-field>
+                    
+                    <mat-form-field color="accent">
+                      <input matInput #input class="form-control" placeholder="IsPolicyActive" [(ngModel)]="data.ispolicyactive" name="ispolicyactive"
+                        >
+                      </mat-form-field>
+                  </div>
+                </mat-grid-tile>
+
+                <mat-grid-tile class="col-grid-tile3">
+                  <div class="form">
+                    <mat-form-field color="accent">
+                      <input matInput #input class="form-control" placeholder="IsCaseOnWB" [(ngModel)]="data.iscaseonwb" name="iscaseonwb" >
+                    </mat-form-field>
+                    
+                    <mat-form-field color="accent">
+                      <input matInput #input class="form-control" placeholder="RoutingIDTypeList" [(ngModel)]="data.routingidtypelist" name="routingidtypelist"
+                        >                       
+                    </mat-form-field>
+                    
+                    <!--<mat-form-field color="accent">
+                      <input matInput #input class="form-control" placeholder="LineOfBusiness" [(ngModel)]="data.lineofbusiness" name="lineofbusiness"
+                        >                       
+                    </mat-form-field>-->
+            <mat-form-field color="accent">
+              <mat-select name="lineofbusiness" class="  " placeholder="LineOfBusiness" [(ngModel)]="data.lineofbusiness">
+                <!--<mat-option></mat-option>-->
+                <mat-option value="1">1</mat-option>
+                <mat-option value="2">2</mat-option>
+                <mat-option value="6">6</mat-option>
+                <mat-option value="99">99</mat-option>
+              </mat-select>
+            </mat-form-field>
+                  </div>
+                </mat-grid-tile>
+              </mat-grid-list>
+            </div>
+            <div>
+              <button mat-button><mat-icon (click)="WidgetChange(-1)">chevron_left</mat-icon></button>
+              <button mat-button><mat-icon (click)="WidgetChange(1)">chevron_right</mat-icon></button>
+             
+            </div>
+            <div mat-dialog-actions>
+              <button mat-button [type]="submit" [disabled]="!formControl.valid" [mat-dialog-close]="1" (click)="stopEdit()">Save</button>
+              <button mat-button (click)="onNoClick()" tabindex="-1">Cancel</button>
+            </div>
+         
+        </ngx-widget-grid>
+      </form>
+    </div>
+    <!-- First Page END-->
+
+    <!-- Second Page STARTED-->
+
+    <div *ngIf="showWidgtTwo" class="container">
+      <form class="mat-dialog-content" (ngSubmit)="submit" #formControl="ngForm">
+        <ngx-widget-grid>
+
+          <div>
+<mat-grid-list cols="3" gutterSize="3px" rowHeight="300">
+                <mat-grid-tile class="col-grid-tile1">
+                  <div class="form">                    
+                    <mat-form-field color="accent">
+                      <input matInput #input class="form-control" placeholder="InternalStatusValid" [(ngModel)]="data.internalstatusvalid" name="internalstatusvalid">
+                    </mat-form-field>
+                    
+                    <mat-form-field color="accent">
+                      <input matInput #input class="form-control" placeholder="InternalStatusInvalid" [(ngModel)]="data.internalstatusinvalid" name="internalstatusinvalid">                      
+                    </mat-form-field>
+                    
+                    <mat-form-field color="accent">
+                      <input matInput #input class="form-control" placeholder="CaseStatusValid" [(ngModel)]="data.casestatusvalid"
+                        name="casestatusvalid">                       
+                    </mat-form-field>
+                  </div>
+                </mat-grid-tile>
+
+
+                  <mat-grid-tile class="col-grid-tile2">
+                  <div class="form">                    
+                    <mat-form-field color="accent">
+                      <input matInput #input class="form-control" placeholder="CaseStatusInvalid" [(ngModel)]="data.casestatusinvalid" name="casestatusinvalid">
+                    </mat-form-field>
+                    
+                    <!--<mat-form-field color="accent">
+                      <input matInput #input class="form-control" placeholder="ApplicationTypeValid" [(ngModel)]="data.applicationtypevalid" name="applicationtypevalid">                      
+                    </mat-form-field>-->
+             <mat-form-field color="accent">
+              <mat-select name="applicationtypevalid" class="  " placeholder="ApplicationTypeValid" [(ngModel)]="data.applicationtypevalid">
+                <!--<mat-option></mat-option>-->
+                <mat-option value="01">01</mat-option>
+                <mat-option value="02">02</mat-option>
+                </mat-select>
+            </mat-form-field>
+                    
+                    <mat-form-field color="accent">
+                      <input matInput #input class="form-control" placeholder="ApplicationTypeInvalid" [(ngModel)]="data.applicationtypeinvalid"
+                        name="applicationtypeinvalid">                       
+                    </mat-form-field>
+                  </div>
+                </mat-grid-tile>
+
+
+              <mat-grid-tile class="col-grid-tile3">
+                  <div class="form">                    
+                    <mat-form-field color="accent">
+                      <input matInput #input class="form-control" placeholder="Plan" [(ngModel)]="data.plan" name="plan">
+                    </mat-form-field>
+                    
+                    <mat-form-field color="accent">
+                      <input matInput #input class="form-control" placeholder="ReplacementList" [(ngModel)]="data.replacementlist" name="replacementlist">                      
+                    </mat-form-field>
+                    
+                    <mat-form-field color="accent">
+                      <input matInput #input class="form-control" placeholder="FieldReporting" [(ngModel)]="data.fieldreporting"
+                        name="fieldreporting">                       
+                    </mat-form-field>
+                  </div>
+                </mat-grid-tile>
+            </mat-grid-list>
+            </div>
+
+          <div>
+            <button mat-button><mat-icon (click)="WidgetChange(-1)">chevron_left</mat-icon></button>
+            <button mat-button><mat-icon (click)="WidgetChange(1)">chevron_right</mat-icon></button>
+
+          </div>
+          <div mat-dialog-actions>
+            <button mat-button [type]="submit" [disabled]="!formControl.valid" [mat-dialog-close]="1" (click)="stopEdit()">Save</button>
+            <button mat-button (click)="onNoClick()" tabindex="-1">Cancel</button>
+          </div>
+        </ngx-widget-grid>
+      </form>
+    </div>
+    <!-- Second Page End-->
+
+    <!-- Third Page STARTED-->
+    <div *ngIf="showWidgtThree" class="container">
+      <form class="mat-dialog-content" (ngSubmit)="submit" #formControl="ngForm">
+        <ngx-widget-grid>
+
+          <div>
+
+            <mat-grid-list cols="3" gutterSize="3px" rowHeight="300">
+                <mat-grid-tile class="col-grid-tile1">
+                  <div class="form">                    
+                    <mat-form-field color="accent">
+                      <input matInput #input class="form-control" placeholder="isunderwriterassigned" [(ngModel)]="data.isunderwriterassigned" name="isunderwriterassigned">
+                    </mat-form-field>
+                    
+                    <mat-form-field color="accent">
+                      <input matInput #input class="form-control" placeholder="IsUnderwriterIDValid" [(ngModel)]="data.isunderwriteridvalid" name="isunderwriteridvalid">                      
+                    </mat-form-field>
+                    
+                    <!--<mat-form-field color="accent">
+                      <input matInput #input class="form-control" placeholder="UnitCodeValid" [(ngModel)]="data.unitcodevalid"
+                        name="unitcodevalid">                       
+                    </mat-form-field>-->
+              <mat-form-field color="accent">
+               <mat-select name="unitcodevalid" class="  " placeholder="UnitCodeValid" [(ngModel)]="data.unitcodevalid">
+                <!--<mat-option></mat-option>-->
+                <mat-option value="CP">CP</mat-option>
+                <mat-option value="CR">CR</mat-option>
+                <mat-option value="EP">EP</mat-option>
+                <mat-option value="ER">ER</mat-option>
+                </mat-select>
+            </mat-form-field>
+                  </div>
+                </mat-grid-tile>
+
+
+                  <mat-grid-tile class="col-grid-tile2">
+                  <div class="form">                    
+                    <mat-form-field color="accent">
+                      <input matInput #input class="form-control" placeholder="UnitCodeInvalid" [(ngModel)]="data.unitcodeinvalid" name="unitcodeinvalid">
+                    </mat-form-field>
+                    
+                    <mat-form-field color="accent">
+                      <input matInput #input class="form-control" placeholder="Notification Through" [(ngModel)]="data.notificationthrough" name="notificationthrough">                      
+                    </mat-form-field>
+                    
+                    <mat-form-field color="accent">
+                      <input matInput #input class="form-control" placeholder="Shared Worklist Id" [(ngModel)]="data.sharedworklistid"
+                        name="sharedworklistid">                       
+                    </mat-form-field>
+                  </div>
+                </mat-grid-tile>
+
+
+              <mat-grid-tile class="col-grid-tile3">
+                  <div class="form">                    
+                    <mat-form-field color="accent">
+                      <input matInput #input class="form-control" placeholder="UnderwriterWorkListID" [(ngModel)]="data.underwriterworkListid" name="underwriterworkListid">
+                    </mat-form-field>
+                    
+                    <mat-form-field color="accent">
+                      <input matInput #input class="form-control" placeholder="ProcessCoordinatorMethod" [(ngModel)]="data.processcoordinatormethod" name="processcoordinatormethod">                      
+                    </mat-form-field>
+                    
+                    <mat-form-field color="accent">
+                      <input matInput #input class="form-control" placeholder="DocumentRoutingType" [(ngModel)]="data.documentroutingtype"
+                        name="documentroutingtype">                       
+                    </mat-form-field>
+                  </div>
+                </mat-grid-tile>
+
+                 </mat-grid-list>
+             
+          </div>
+
+          <div>
+            <button mat-button><mat-icon (click)="WidgetChange(-1)">chevron_left</mat-icon></button>
+            <button mat-button><mat-icon (click)="WidgetChange(1)">chevron_right</mat-icon></button>
+
+          </div>
+          <div mat-dialog-actions>
+            <button mat-button [type]="submit" [disabled]="!formControl.valid" [mat-dialog-close]="1" (click)="stopEdit()">Save</button>
+            <button mat-button (click)="onNoClick()" tabindex="-1">Cancel</button>
+          </div>
+        </ngx-widget-grid>
+      </form>
+    </div>
+
+    <!-- Third Page END-->
